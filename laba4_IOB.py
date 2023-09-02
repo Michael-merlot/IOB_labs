@@ -27,14 +27,14 @@ def calculate():
     summ_kod_label.config(text=f"SummKodBukvOtkr: {summ_kod_result}")
 
 
-# GUI
+
 app = tk.Tk()
 app.title("Form4")
 
 frame = ttk.Frame(app, padding="10")
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-# Headings
+# Заголовок
 ttk.Label(frame, text="Входные данные").grid(row=0, columnspan=2, sticky=tk.W)
 ttk.Label(frame, text="P: ").grid(row=1, column=0, sticky=tk.W)
 message_entry = ttk.Entry(frame, width=20)
@@ -56,13 +56,13 @@ ttk.Label(frame, text="T0: ").grid(row=5, column=0, sticky=tk.W)
 t0_entry = ttk.Entry(frame, width=20)
 t0_entry.grid(row=5, column=1)
 
-# Calculate button
+# Кнопка считать
 ttk.Button(frame, text="Рассчитать", command=calculate).grid(row=6, columnspan=2)
 
-# Results heading
+# Заголовок результатов
 ttk.Label(frame, text="Результат").grid(row=7, columnspan=2, sticky=tk.W)
 
-# Results
+# Результат
 ksumm_label = ttk.Label(frame, text="KSumm: ")
 ksumm_label.grid(row=8, columnspan=2, sticky=tk.W)
 

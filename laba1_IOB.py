@@ -4,12 +4,10 @@ import random
 
 # 14 вариант
 
-# Функция для генерации пароля
 def generate_password():
     username = username_entry.get()
     password = []
 
-    # Используем символы русского алфавита
     uppercase_letters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
     lowercase_letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 
@@ -30,11 +28,12 @@ def generate_password():
     password_label.config(text='Сгенерированный пароль: ' + ''.join(password))
 
 
-# Создание окна
+
 window = tk.Tk()
 window.title("Form1")
 
 # Создание и расположение элементов интерфейса
+
 username_label = ttk.Label(window, text="Введите идентификатор пользователя:")
 username_label.grid(row=0, column=0, padx=5, pady=5)
 

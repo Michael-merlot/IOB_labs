@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+# 14 вариант
 
 def calculate():
     message = message_entry.get()
@@ -9,23 +10,29 @@ def calculate():
     c = int(c_entry.get())
     t0 = int(t0_entry.get())
 
-    # KSumm
+    # Заголовок линий
+    print(f"Message: {message}")
+    print(f"a: {a}, b: {b}, c: {c}, t0: {t0}")
+
     Summ = sum(ord(char) for char in message)
+    print(f"KSumm before calculation: {Summ}")  # Линия
+
     k_summ_result = (a * Summ + b) % c
+    print(f"KSumm after calculation: {k_summ_result}")  # Линия
 
     # SummKodBukvOtkr
     Summ = 0
     t_prev = t0
     for char in message:
         x_i = ord(char)
-        y_i = (x_i + t_prev) % c
+        y_i = x_i ^ t_prev  # XOR операция
         Summ += y_i
-        t_prev = (a * t_prev + b) % c
-    summ_kod_result = Summ
+        t_prev = (a * t_prev + b) % c  # Обновляем t для следующего символа
+
+    summ_kod_result = Summ % 256
 
     ksumm_label.config(text=f"KSumm: {k_summ_result}")
     summ_kod_label.config(text=f"SummKodBukvOtkr: {summ_kod_result}")
-
 
 
 app = tk.Tk()
